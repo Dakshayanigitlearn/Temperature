@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPERATURE CONVERTER</title>
+</head>
+<body>
+    <h1>Temperature conversion</h1>
+    <input type="number" id="number" placeholder="Enter Temperature in Fahrenheit">
+    <br><br>
+    <button onclick="tempConvert()">Check</button>
+    <p id="result"></p>
+    <script>
+        function tempConvert() {
+            var number = parseFloat(document.getElementById("number").value); // Use parseFloat to handle decimal numbers.
+            var resultElement = document.getElementById("result");
+            
+            if (!isNaN(number))
+             { // Check if the input is a valid number.
+                var celsius = (number - 32) * 5/9;
+                resultElement.textContent = celsius.toFixed(2) + "°C is the temperature in Celsius"; // Display temperature with 2 decimal places.
+            }
+             else {
+                resultElement.textContent = "Please enter a valid temperature in Fahrenheit.";
+            }
+        }
+    </script>
+</body>
+</html>
